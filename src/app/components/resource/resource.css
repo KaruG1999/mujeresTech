@@ -1,0 +1,213 @@
+/* Paleta: morado profundo, violeta claro y acentos neutros */
+:root{
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #7c3aed; /* morado */
+  --accent-2: #60a5fa; /* azul claro */
+  --muted: #9aa4b2;
+  --text: #e6eef8;
+  --glass: rgba(255,255,255,0.03);
+}
+
+.resource-wrap{
+  max-width: 980px;
+  margin: 1rem auto;
+  padding: 1.25rem;
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, rgba(124,58,237,0.04), transparent);
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(115, 137, 233, 0.5);
+}
+
+.resource-header{
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.resource-header h2{
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.controls{
+  display:flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Search */
+.search{
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  background: var(--glass);
+  padding: 0.35rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.search input{
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  padding: 0.45rem 0.5rem;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.clear-btn{
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+/* Categories */
+.category-nav{
+  display:flex;
+  gap: 0.5rem;
+  flex-wrap:wrap;
+}
+
+.cat-btn{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: var(--muted);
+  transition: all .18s ease;
+}
+
+.cat-btn:hover{ transform: translateY(-2px); }
+
+.cat-btn.active{
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+  border: none;
+  box-shadow: 0 6px 18px rgba(96,165,250,0.08);
+}
+
+/* List / Cards */
+.list{ margin-top: 0.75rem; }
+
+.cards{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.9rem;
+}
+
+.card{
+  background: var(--card);
+  border-radius: 12px;
+  padding: 0.9rem;
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(115, 137, 233, 0.6);
+}
+
+.card-title{
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.title-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:0.6rem;
+}
+
+.badge{
+  background: rgba(255,255,255,0.04);
+  padding: 0.22rem 0.45rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.desc{
+  margin: 0.5rem 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+
+.meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:0.5rem;
+  margin-top: 0.6rem;
+}
+
+.cat{
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: rgba(255,255,255,0.02);
+  padding: 0.25rem 0.45rem;
+  border-radius: 8px;
+}
+
+.actions{
+  display:flex;
+  gap:0.45rem;
+  align-items:center;
+}
+
+/* Buttons */
+.open-btn{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.35rem 0.55rem;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+.open-btn:disabled{
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* external link icon */
+.link{
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+  display:inline-flex;
+  align-items:center;
+}
+
+/* Footer */
+.resource-footer{
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+/* Responsive tweaks */
+@media (min-width: 720px){
+  .resource-header{ flex-direction: row; align-items: center; justify-content: space-between; gap:1rem; }
+  .controls{ flex-direction: row; align-items:center; gap:1rem; }
+  .search{ width: 420px; }
+}

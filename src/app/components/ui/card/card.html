@@ -1,1 +1,12 @@
-<p>card works!</p>
+<div class="woman-card">
+  <div class="woman-image" *ngIf="woman.image">
+    <img [src]="woman.image" [alt]="woman.title" />
+  </div>
+
+  <div class="woman-content">
+    <h3 class="woman-title">{{ woman.title }}</h3>
+    <p class="woman-especialidad" *ngIf="woman.especialidad">{{ woman.especialidad }}</p>
+    <p class="woman-logro" *ngIf="woman.logro">{{ woman.logro }}</p>
+    <p class="woman-descripcion" *ngIf="woman.descripcion">{{ woman.descripcion }}</p>
+  </div>
+</div>

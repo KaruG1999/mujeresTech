@@ -1,1 +1,77 @@
-<p>resource works!</p>
+<section class="resource-wrap" aria-labelledby="resources-title">
+  <header class="resource-header">
+    <h2 id="resources-title">Recursos para mujeres en tech</h2>
+
+    <div class="controls">
+      <label class="search">
+        <input
+          type="search"
+          [(ngModel)]="search"
+          placeholder="Buscar recursos (ej. bootcamp, podcast, beca...)"
+          aria-label="Buscar recursos"
+        />
+        <button type="button" (click)="clearSearch()" aria-label="Limpiar búsqueda" class="clear-btn" *ngIf="search">✕</button>
+      </label>
+
+      <nav class="category-nav" aria-label="Categorías">
+        <button
+          *ngFor="let cat of categories"
+          (click)="setCategory(cat)"
+          [class.active]="activeCategory === cat"
+          [attr.aria-pressed]="activeCategory === cat"
+          class="cat-btn"
+        >
+          {{ cat }}
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="list">
+    <p class="results" *ngIf="filteredResources.length === 0">No se encontraron recursos que coincidan.</p>
+
+    <ul class="cards" *ngIf="filteredResources.length > 0">
+      <li *ngFor="let r of filteredResources" class="card" role="listitem">
+        <div class="card-content">
+          <div class="title-row">
+            <h3 class="card-title">{{ r.title }}</h3>
+            <span class="badge" *ngIf="r.badge">{{ r.badge }}</span>
+          </div>
+
+          <p class="desc">{{ r.description }}</p>
+
+          <div class="meta">
+            <span class="cat">{{ r.category }}</span>
+
+            <div class="actions">
+              <button
+                class="open-btn"
+                (click)="open(r.url)"
+                [disabled]="!r.url"
+                [attr.aria-disabled]="!r.url"
+                [attr.aria-label]="r.url ? 'Abrir ' + r.title : r.title + ' (sin enlace)'"
+              >
+                Abrir
+              </button>
+
+              <a
+                *ngIf="r.url"
+                class="link"
+                [href]="r.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir enlace en nueva pestaña"
+                >🔗</a
+              >
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <footer class="resource-footer">
+    <small>¿Falta alguno? Agregalo al array <code>resources</code> en <code>resource.component.ts</code>.</small>
+  </footer>
+</section>
+
