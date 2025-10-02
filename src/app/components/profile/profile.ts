@@ -16,7 +16,7 @@ export class Profile {
       especialidad: 'Robótica y educación tecnológica',
       descripcion:
         'Docente y divulgadora. Promueve el aprendizaje de programación y robótica en niños y niñas. Creadora de contenidos accesibles para docentes de nivel inicial y primario.',
-      image: 'assets/img/valeria.jpg',
+      image: 'img/ValeriadeLuca.JPG',
     },
     {
       title: 'Cecilia Berdichevsky',
@@ -45,6 +45,13 @@ export class Profile {
       logro:
         'Primera científica argentina reconocida por la revista TIME como una de las 100 personas más influyentes a nivel mundial en el campo de la inteligencia artificial.',
       image: 'img/MilagrosMiceli.jpg',
+    },
+    {
+      title: 'Emilse Garzón',
+      especialidad: 'Periodista y divulgadora argentina',
+      descripcion:
+        'En su labor de periodista y divulgadora se enfoca en temas referidos a la cultura digital, la tecnología, la innovación, la ciberseguridad y la IA.',
+      image: 'img/EmilseGarzon.JPG',
     },
   ];
 }
